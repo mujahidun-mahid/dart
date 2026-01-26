@@ -11,13 +11,30 @@
 # (the recommended set includes the core lints).
 # The core lints are also what is used by pub.dev for scoring packages.
 
+analyzer:
+  errors:
+    strict_top_level_inference: ignore
 include: package:lints/recommended.yaml
 
-# Uncomment the following section to specify additional rules.
+linter:
+  rules:
+    # Fixes '37_class.dart' filename warning
+    file_names: false
 
-# linter:
-#   rules:
-#     - camel_case_types
+    # Fixes 'Missing type annotation' on functions and variables
+    always_declare_return_types: false
+    type_annotate_public_apis: false
+
+    # Fixes 'MyName' and 'Alphaset' naming warnings
+    non_constant_identifier_names: false
+    # Fixes 'The value of the local variable 'obj' isn't used''
+
+    # Fixes 'Unnecessary new keyword'
+    unnecessary_new: false
+
+    # General rule to stop nagging about types
+    omit_local_variable_types: false
+# Uncomment the following section to specify additional rules.
 
 # analyzer:
 #   exclude:
